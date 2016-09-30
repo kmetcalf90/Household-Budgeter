@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C0EFA70-A6C9-4809-82E8-D2777D626FF9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication4</RootNamespace>
+    <AssemblyName>WebApplication4</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/05f0db7d-94aa-4c92-b006-b1d682bb2f8b/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/WebApplication4</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Content\BudgetsController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BankAccountsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HouseholdsController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TransactionsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BankAccount.cs" />
+    <Compile Include="Models\Budget.cs" />
+    <Compile Include="Models\Budgetitem.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Household.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="blue-moonV1.0.8\404.html" />
+    <Content Include="blue-moonV1.0.8\500.html" />
+    <Content Include="blue-moonV1.0.8\blog-full-page.html" />
+    <Content Include="blue-moonV1.0.8\blog.html" />
+    <Content Include="blue-moonV1.0.8\calendar.html" />
+    <Content Include="blue-moonV1.0.8\css\alertify.core.css" />
+    <Content Include="blue-moonV1.0.8\css\barIndicator.css" />
+    <Content Include="blue-moonV1.0.8\css\blog.css" />
+    <Content Include="blue-moonV1.0.8\css\bootstrap.css" />
+    <Content Include="blue-moonV1.0.8\css\bootstrap.min.css" />
+    <Content Include="blue-moonV1.0.8\css\charts-graphs.css" />
+    <Content Include="blue-moonV1.0.8\css\color-picker\jquery.minicolors.css" />
+    <Content Include="blue-moonV1.0.8\css\color-picker\jquery.minicolors.png" />
+    <Content Include="blue-moonV1.0.8\css\datepicker.css" />
+    <Content Include="blue-moonV1.0.8\css\fullcalendar.css" />
+    <Content Include="blue-moonV1.0.8\css\images\animated-overlay.gif" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-bg_flat_55_fbf9ee_40x100.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-bg_flat_75_f2ede0_40x100.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-bg_flat_75_f4f2ee_40x100.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-icons_888888_256x240.png" />
+    <Content Include="blue-moonV1.0.8\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="blue-moonV1.0.8\css\new.css" />
+    <Content Include="blue-moonV1.0.8\css\pricing.css" />
+    <Content Include="blue-moonV1.0.8\css\theme.css" />
+    <Content Include="blue-moonV1.0.8\css\timepicker.css" />
+    <Content Include="blue-moonV1.0.8\css\wysi\bootstrap-wysihtml5.css" />
+    <Content Include="blue-moonV1.0.8\default.html" />
+    <Content Include="blue-moonV1.0.8\edit-profile.html" />
+    <Content Include="blue-moonV1.0.8\flot.html" />
+    <Content Include="blue-moonV1.0.8\fonts\font-awesome.css" />
+    <Content Include="blue-moonV1.0.8\fonts\font-awesome.min.css" />
+    <Content Include="blue-moonV1.0.8\fonts\fontawesome-webfont.svg" />
+    <Content Include="blue-moonV1.0.8\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="blue-moonV1.0.8\forms.html" />
+    <Content Include="blue-moonV1.0.8\graphs.html" />
+    <Content Include="blue-moonV1.0.8\help.html" />
+    <Content Include="blue-moonV1.0.8\icons.html" />
+    <Content Include="blue-moonV1.0.8\img\alpha.png" />
+    <Content Include="blue-moonV1.0.8\img\cd-icon-small-arrow.svg" />
+    <Content Include="blue-moonV1.0.8\img\clear.png" />
+    <Content Include="blue-moonV1.0.8\img\CoderFoundryHeadShot.jpg" />
+    <Content Include="blue-moonV1.0.8\img\documentation.png" />
+    <Content Include="blue-moonV1.0.8\img\favicon.ico" />
+    <Content Include="blue-moonV1.0.8\img\glyphicons-halflings-white.png" />
+    <Content Include="blue-moonV1.0.8\img\glyphicons-halflings.png" />
+    <Content Include="blue-moonV1.0.8\img\hblogo.png" />
+    <Content Include="blue-moonV1.0.8\img\hue.png" />
+    <Content Include="blue-moonV1.0.8\img\loading-black.gif" />
+    <Content Include="blue-moonV1.0.8\img\loading-blue.gif" />
+    <Content Include="blue-moonV1.0.8\img\loading-green.gif" />
+    <Content Include="blue-moonV1.0.8\img\loading-orange.gif" />
+    <Content Include="blue-moonV1.0.8\img\loading-red.gif" />
+    <Content Include="blue-moonV1.0.8\img\loading.gif" />
+    <Content Include="blue-moonV1.0.8\img\logo copy.png" />
+    <Content Include="blue-moonV1.0.8\img\logo-grey.png" />
+    <Content Include="blue-moonV1.0.8\img\logo.png" />
+    <Content Include="blue-moonV1.0.8\img\logo1.png" />
+    <Content Include="blue-moonV1.0.8\img\logo2.png" />
+    <Content Include="blue-moonV1.0.8\img\logohb %282%29.png" />
+    <Content Include="blue-moonV1.0.8\img\profile.jpg" />
+    <Content Include="blue-moonV1.0.8\img\profile.png" />
+    <Content Include="blue-moonV1.0.8\img\profile1.png" />
+    <Content Include="blue-moonV1.0.8\img\saturation.png" />
+    <Content Include="blue-moonV1.0.8\img\select2.png" />
+    <Content Include="blue-moonV1.0.8\img\social_icons.png" />
+    <Content Include="blue-moonV1.0.8\img\sorting.png" />
+    <Content Include="blue-moonV1.0.8\img\sorting_asc.png" />
+    <Content Include="blue-moonV1.0.8\img\sorting_desc.png" />
+    <Content Include="blue-moonV1.0.8\img\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="blue-moonV1.0.8\img\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="blue-moonV1.0.8\img\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="blue-moonV1.0.8\img\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="blue-moonV1.0.8\img\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="blue-moonV1.0.8\img\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="blue-moonV1.0.8\img\ui-icons_3d80b3_256x240.png" />
+    <Content Include="blue-moonV1.0.8\index.html" />
+    <Content Include="blue-moonV1.0.8\index2.html" />
+    <Content Include="blue-moonV1.0.8\index3.html" />
+    <Content Include="blue-moonV1.0.8\invoice.html" />
+    <Content Include="blue-moonV1.0.8\js\alertify.min.js" />
+    <Content Include="blue-moonV1.0.8\js\bootstrap.js" />
+    <Content Include="blue-moonV1.0.8\js\bootstrap.min.js" />
+    <Content Include="blue-moonV1.0.8\js\color-picker\jquery.minicolors.js" />
+    <Content Include="blue-moonV1.0.8\js\color-picker\jquery.minicolors.min.js" />
+    <Content Include="blue-moonV1.0.8\js\custom-barIndicator.js" />
+    <Content Include="blue-moonV1.0.8\js\custom-google.js" />
+    <Content Include="blue-moonV1.0.8\js\custom-index2.js" />
+    <Content Include="blue-moonV1.0.8\js\custom-index3.js" />
+    <Content Include="blue-moonV1.0.8\js\custom-maps.js" />
+    <Content Include="blue-moonV1.0.8\js\custom.js" />
+    <Content Include="blue-moonV1.0.8\js\date-picker\date.js" />
+    <Content Include="blue-moonV1.0.8\js\date-picker\daterangepicker.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\area.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\donut.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\horizontal-index.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\horizontal.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\index3-area.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\index3-pie.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\index3-scatter.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\line.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\pie.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\realtime-index.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\realtime.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\rectangular-pie.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\scatter.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\stacked-area.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\stacked-horizontal.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\stacked-vertical.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\custom\vertical.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.min.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.orderBar.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.orderBar.min.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.pie.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.pie.min.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.resize.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.resize.min.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.stack.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.stack.min.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.tooltip.js" />
+    <Content Include="blue-moonV1.0.8\js\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="blue-moonV1.0.8\js\fullcalendar\fullcalendar.js" />
+    <Content Include="blue-moonV1.0.8\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="blue-moonV1.0.8\js\fullcalendar\jquery-ui.custom.min.js" />
+    <Content Include="blue-moonV1.0.8\js\google-api.js" />
+    <Content Include="blue-moonV1.0.8\js\html5shiv.js" />
+    <Content Include="blue-moonV1.0.8\js\jquery-barIndicator.js" />
+    <Content Include="blue-moonV1.0.8\js\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="blue-moonV1.0.8\js\jquery-ui-v1.10.3.js" />
+    <Content Include="blue-moonV1.0.8\js\jquery.datatables.js" />
+    <Content Include="blue-moonV1.0.8\js\jquery.easing.1.3.js" />
+    <Content Include="blue-moonV1.0.8\js\jquery.easy-pie-chart.js" />
+    <Content Include="blue-moonV1.0.8\js\jquery.js" />
+    <Content Include="blue-moonV1.0.8\js\jquery.scrollUp.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\jquery.vmap.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\jquery.vmap.min.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\jquery.vmap.packed.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\jqvmap.css" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\continents\jquery.vmap.africa.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\continents\jquery.vmap.asia.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\continents\jquery.vmap.australia.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\continents\jquery.vmap.europe.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\continents\jquery.vmap.north-america.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\continents\jquery.vmap.south-america.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\continents\readme.txt" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\jquery.vmap.europe.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\jquery.vmap.france.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\jquery.vmap.germany.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\jquery.vmap.russia.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\jquery.vmap.usa.js" />
+    <Content Include="blue-moonV1.0.8\js\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="blue-moonV1.0.8\js\justgage\justgage.js" />
+    <Content Include="blue-moonV1.0.8\js\justgage\raphael.2.1.0.min.js" />
+    <Content Include="blue-moonV1.0.8\js\menu.js" />
+    <Content Include="blue-moonV1.0.8\js\modernizr.js" />
+    <Content Include="blue-moonV1.0.8\js\moment.js" />
+    <Content Include="blue-moonV1.0.8\js\pricing.js" />
+    <Content Include="blue-moonV1.0.8\js\sparkline.js" />
+    <Content Include="blue-moonV1.0.8\js\tiny-scrollbar.js" />
+    <Content Include="blue-moonV1.0.8\js\wysi\bootstrap3-wysihtml5.js" />
+    <Content Include="blue-moonV1.0.8\js\wysi\wysihtml5-0.3.0.js" />
+    <Content Include="blue-moonV1.0.8\js\wysi\wysihtml5-0.3.0.min.js" />
+    <Content Include="blue-moonV1.0.8\login.html" />
+    <Content Include="blue-moonV1.0.8\media.html" />
+    <Content Include="blue-moonV1.0.8\notifications.html" />
+    <Content Include="blue-moonV1.0.8\panels.html" />
+    <Content Include="blue-moonV1.0.8\pricing.html" />
+    <Content Include="blue-moonV1.0.8\tables.html" />
+    <Content Include="blue-moonV1.0.8\timeline.html" />
+    <Content Include="blue-moonV1.0.8\typography.html" />
+    <Content Include="blue-moonV1.0.8\ui-elements.html" />
+    <Content Include="blue-moonV1.0.8\vector-maps.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ai.0.22.19-build00125.js" />
+    <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="blue-moonV1.0.8\css\.sass-cache\35c657039c0c3f58cff5ff5d08eaaec7563f979d\new.scssc" />
+    <Content Include="blue-moonV1.0.8\css\.sass-cache\70a6c84393f77ea5c7ed0be96e95712aa78d72a5\new.scssc" />
+    <Content Include="blue-moonV1.0.8\css\.sass-cache\7af8cfb6b462240c99bfffc0fa8f713fab37b202\main.scssc" />
+    <Content Include="blue-moonV1.0.8\css\.sass-cache\8982107563a5f9e3d4074094d5203ea9a5fcf49b\new.scssc" />
+    <Content Include="blue-moonV1.0.8\css\.sass-cache\a5105d4793763f09ca4c64e35ed68787ee39a6ad\new.scssc" />
+    <Content Include="blue-moonV1.0.8\css\.sass-cache\a5c7de67173636f566763408774e4c1e457d8086\new.scssc" />
+    <Content Include="blue-moonV1.0.8\css\new.scss" />
+    <Content Include="blue-moonV1.0.8\fonts\fontawesome-webfont.eot" />
+    <Content Include="blue-moonV1.0.8\fonts\fontawesome-webfont.ttf" />
+    <Content Include="blue-moonV1.0.8\fonts\fontawesome-webfont.woff" />
+    <Content Include="blue-moonV1.0.8\fonts\fontawesome-webfont.woff2" />
+    <Content Include="blue-moonV1.0.8\fonts\FontAwesome.otf" />
+    <Content Include="blue-moonV1.0.8\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="blue-moonV1.0.8\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="blue-moonV1.0.8\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="blue-moonV1.0.8\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="blue-moonV1.0.8\img\Thumbs.db" />
+    <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Households\Create.cshtml" />
+    <Content Include="Views\Households\Delete.cshtml" />
+    <Content Include="Views\Households\Details.cshtml" />
+    <Content Include="Views\Households\Edit.cshtml" />
+    <Content Include="Views\Households\Index.cshtml" />
+    <Content Include="Views\BankAccounts\Create.cshtml" />
+    <Content Include="Views\BankAccounts\Delete.cshtml" />
+    <Content Include="Views\BankAccounts\Details.cshtml" />
+    <Content Include="Views\BankAccounts\Edit.cshtml" />
+    <Content Include="Views\BankAccounts\Index.cshtml" />
+    <Content Include="Views\Transactions\Create.cshtml" />
+    <Content Include="Views\Transactions\Delete.cshtml" />
+    <Content Include="Views\Transactions\Details.cshtml" />
+    <Content Include="Views\Transactions\Edit.cshtml" />
+    <Content Include="Views\Transactions\Index.cshtml" />
+    <Content Include="Views\Budgets\Create.cshtml" />
+    <Content Include="Views\Budgets\Delete.cshtml" />
+    <Content Include="Views\Budgets\Details.cshtml" />
+    <Content Include="Views\Budgets\Edit.cshtml" />
+    <Content Include="Views\Budgets\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12898</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12898/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
