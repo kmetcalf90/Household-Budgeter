@@ -15,8 +15,8 @@ namespace WebApplication4.Models
         Accounts = new HashSet<BankAccount>();
         Budgets = new HashSet<Budget>();
             Users = new HashSet<ApplicationUser>();
-
-        Categories = new HashSet<Category>();
+            this.BudgetItems = new HashSet<BudgetItem>();
+            Categories = new HashSet<Category>();
     }
 
  
@@ -31,7 +31,7 @@ namespace WebApplication4.Models
     public virtual ICollection<BankAccount> Accounts { get; set; }
     public virtual ICollection<Budget> Budgets { get; set; }
     public virtual ICollection<ApplicationUser> Users { get; set; }
-    
-    public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<BudgetItem> BudgetItems { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
 }
 }

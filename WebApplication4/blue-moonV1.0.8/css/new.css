@@ -413,9 +413,9 @@ blockquote {
     display: none; }
 
 #scrollbar-one .thumb, #scrollbar-two .thumb {
-  background-color: #3693cf; }
+  background-color: #000000; }
   #scrollbar-one .thumb .end, #scrollbar-two .thumb .end {
-    background-color: #3693cf; }
+    background-color: #000000; }
 
 .noSelect {
   user-select: none;

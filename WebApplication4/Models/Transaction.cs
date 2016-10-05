@@ -10,7 +10,7 @@ namespace WebApplication4.Models
     {
         public int Id { get; set; }
         public int AccountId { get; set; }
-        public int TypeId { get; set; }
+       
         public int CategoryId { get; set; }
         public string UserId { get; set; }
         public bool Reconciled { get; set; }
@@ -19,7 +19,7 @@ namespace WebApplication4.Models
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy, h:mm tt}")]
         public DateTimeOffset Date { get; set; }
-
+        public bool IsIncome { get; set; }
         public bool Void { get; set; }
 
         public decimal Amount { get; set; }

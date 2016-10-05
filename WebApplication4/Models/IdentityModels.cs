@@ -41,7 +41,7 @@ namespace WebApplication4.Models
             return new ApplicationDbContext();
         }
         public DbSet<Household> Households { get; set; }
-        public DbSet<BankAccount> Accounts { get; set; }
+        public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Budget> Budgets { get; set; }

@@ -199,6 +199,8 @@
     <Compile Include="Content\BudgetsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BankAccountsController.cs" />
+    <Compile Include="Controllers\BudgetItemsController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HouseholdsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -206,6 +208,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\TransactionHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BankAccount.cs" />
@@ -213,6 +216,7 @@
     <Compile Include="Models\Budgetitem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Household.cs" />
+    <Compile Include="Models\HouseholdViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Transaction.cs" />
@@ -494,6 +498,16 @@
     <Content Include="Views\Budgets\Details.cshtml" />
     <Content Include="Views\Budgets\Edit.cshtml" />
     <Content Include="Views\Budgets\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\BudgetItems\Create.cshtml" />
+    <Content Include="Views\BudgetItems\Delete.cshtml" />
+    <Content Include="Views\BudgetItems\Details.cshtml" />
+    <Content Include="Views\BudgetItems\Edit.cshtml" />
+    <Content Include="Views\BudgetItems\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

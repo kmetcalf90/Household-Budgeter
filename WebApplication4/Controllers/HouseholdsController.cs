@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -17,11 +18,16 @@ namespace WebApplication4.Controllers
         // GET: Households
         public ActionResult Index()
         {
+            
+            var userId = User.Identity.GetUserId();
+            var households = db.Households.Include(h => h.Users).Where(h => h.Users.Where(u => u.Id == userId).Any());
             return View(db.Households.ToList());
         }
-
-        // GET: Households/Details/5
-        public ActionResult Details(int? id)
+         
+                    
+                
+    // GET: Households/Details/5
+    public ActionResult Details(int? id)
         {
             if (id == null)
             {

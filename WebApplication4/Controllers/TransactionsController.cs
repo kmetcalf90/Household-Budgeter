@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication4.Helpers;
 using WebApplication4.Models;
 
 namespace WebApplication4.Controllers
@@ -17,6 +19,7 @@ namespace WebApplication4.Controllers
         // GET: Transactions
         public ActionResult Index()
         {
+           
             var transactions = db.Transactions.Include(t => t.Account).Include(t => t.Category).Include(t => t.User);
             return View(transactions.ToList());
         }
@@ -39,7 +42,9 @@ namespace WebApplication4.Controllers
         // GET: Transactions/Create
         public ActionResult Create()
         {
-            ViewBag.AccountId = new SelectList(db.Accounts, "Id", "Name");
+            
+            var userId = User.Identity.GetUserId();
+            ViewBag.AccountId = new SelectList(db.BankAccounts, "Id", "Name");
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
             ViewBag.UserId = new SelectList(db.Users, "Id", "Email");
             return View();
@@ -50,16 +55,24 @@ namespace WebApplication4.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,AccountId,TypeId,CategoryId,UserId,Reconciled,ReconciledAmount,Description,Date,Void,Amount")] Transaction transaction)
+        public ActionResult Create([Bind(Include = "Id,AccountId,CategoryId,UserId,Description,Amount")] Transaction transaction)
         {
             if (ModelState.IsValid)
             {
+                var userId = User.Identity.GetUserId();
+                transaction.Amount = Math.Abs(transaction.Amount);
+                if (!TransactionHelper.CategoryIsDeposit(transaction.CategoryId))
+                {
+                    transaction.Amount *= -1;
+                }
+               
+                transaction.Date = DateTime.Now;
                 db.Transactions.Add(transaction);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AccountId = new SelectList(db.Accounts, "Id", "Name", transaction.AccountId);
+            ViewBag.AccountId = new SelectList(db.BankAccounts, "Id", "Name", transaction.AccountId);
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", transaction.CategoryId);
             ViewBag.UserId = new SelectList(db.Users, "Id", "Email", transaction.UserId);
             return View(transaction);
@@ -77,7 +90,7 @@ namespace WebApplication4.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AccountId = new SelectList(db.Accounts, "Id", "Name", transaction.AccountId);
+            ViewBag.AccountId = new SelectList(db.BankAccounts, "Id", "Name", transaction.AccountId);
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", transaction.CategoryId);
             ViewBag.UserId = new SelectList(db.Users, "Id", "Email", transaction.UserId);
             return View(transaction);
@@ -88,7 +101,7 @@ namespace WebApplication4.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,AccountId,TypeId,CategoryId,UserId,Reconciled,ReconciledAmount,Description,Date,Void,Amount")] Transaction transaction)
+        public ActionResult Edit([Bind(Include = "Id,AccountId,CategoryId,UserId,Reconciled,ReconciledAmount,Description,Date,Void,Amount")] Transaction transaction)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +109,7 @@ namespace WebApplication4.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AccountId = new SelectList(db.Accounts, "Id", "Name", transaction.AccountId);
+            ViewBag.AccountId = new SelectList(db.BankAccounts, "Id", "Name", transaction.AccountId);
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", transaction.CategoryId);
             ViewBag.UserId = new SelectList(db.Users, "Id", "Email", transaction.UserId);
             return View(transaction);

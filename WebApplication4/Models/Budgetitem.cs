@@ -14,6 +14,8 @@ namespace WebApplication4.Models
         public int BudgetId { get; set; }
         public float Amount { get; set; }
         public bool Active { get; set; }
+        public bool IsIncome { get; set; }
+        public string Type { get; set; }
         public virtual Budget Budget { get; set; }
         public virtual Category Category { get; set; }
     }
