@@ -14,7 +14,7 @@ namespace WebApplication4.Models
         public int CategoryId { get; set; }
         public string UserId { get; set; }
         public bool Reconciled { get; set; }
-        public float ReconciledAmount { get; set; }
+        public decimal ReconciledAmount { get; set; }
         public string Description { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy, h:mm tt}")]

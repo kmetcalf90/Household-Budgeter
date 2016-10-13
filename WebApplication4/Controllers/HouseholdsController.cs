@@ -18,9 +18,10 @@ namespace WebApplication4.Controllers
         // GET: Households
         public ActionResult Index()
         {
-            
-            var userId = User.Identity.GetUserId();
-            var households = db.Households.Include(h => h.Users).Where(h => h.Users.Where(u => u.Id == userId).Any());
+
+            var user = db.Users.Find(User.Identity.GetUserId());
+           
+            var households = db.Households.Include(h => h.Users).Where(h => h.Users.Where(u => u == User).Any());
             return View(db.Households.ToList());
         }
          
